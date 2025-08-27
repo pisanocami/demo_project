@@ -46,7 +46,12 @@ A modern project management application built with React + TypeScript + Vite (fr
 │   └── utils/            # Utility functions
 │
 ├── public/               # Static files
-└── package.json          # Node.js dependencies
+├── .replit               # Replit configuration
+├── replit.nix           # Nix package configuration
+├── Procfile             # Heroku deployment config
+├── start.sh             # Startup script
+├── build.sh             # Build script
+└── package.json         # Node.js dependencies
 ```
 
 ## 🚀 Getting Started
@@ -129,6 +134,48 @@ Once the backend is running, you can access:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 🚀 Deployment
+
+### Replit Deployment
+
+1. Fork this repository to your Replit account
+2. Create a new Repl and import the repository
+3. Replit will automatically detect the configuration
+4. Click "Run" to start the application
+5. The app will be available at the provided Replit URL
+
+### Heroku Deployment
+
+1. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+2. Login to your Heroku account:
+   ```bash
+   heroku login
+   ```
+3. Create a new Heroku app:
+   ```bash
+   heroku create your-app-name
+   ```
+4. Deploy your application:
+   ```bash
+   git push heroku main
+   ```
+5. Open the app:
+   ```bash
+   heroku open
+   ```
+
+### Local Development with Docker
+
+1. Build the Docker image:
+   ```bash
+   docker build -t project-manager .
+   ```
+2. Run the container:
+   ```bash
+   docker run -p 5000:5000 project-manager
+   ```
+3. Access the app at `http://localhost:5000`
 
 ## 📄 License
 
