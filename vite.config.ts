@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 5000,
-    allowedHosts: [".replit.dev", ".repl.co", "localhost"],
+    allowedHosts: [".replit.dev", ".repl.co", ".replit.app", "localhost"],
     proxy: {
       // Proxy API requests to the FastAPI backend
       '/api': {
