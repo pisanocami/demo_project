@@ -1,0 +1,84 @@
+Create a complete project manager app with React + Vite + TypeScript in Replit.
+
+PROJECT STRUCTURE:
+- React 18 + Vite + TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Zustand for global state
+- React Hook Form for forms
+- Lucide React for icons
+- React DnD for kanban drag & drop
+
+REQUIRED FEATURES:
+
+1. AUTHENTICATION:
+- Login/register pages with forms
+- States: authenticated/unauthenticated
+- Mock logged user
+
+2. MAIN DASHBOARD:
+- Header with logo, title and user avatar
+- Sidebar with navigation (Projects, Tasks, Settings)
+- Main view with summary statistics
+- Recent projects listing
+
+3. PROJECT MANAGEMENT:
+- List of all projects with filters
+- Project cards showing: name, progress, members, date
+- Modal to create/edit project
+- Project detail view
+
+4. KANBAN BOARD:
+- 3 columns: "To Do", "In Progress", "Completed"
+- Drag & drop between columns
+- Task cards with: title, description, assignee, due date
+- Modal to create/edit tasks
+
+5. UI COMPONENTS:
+- AppShell (main layout)
+- ProjectCard (project card)
+- TaskCard (task card)
+- KanbanColumn (board column)
+- Generic reusable Modal
+- EmptyState for empty lists
+- LoadingSpinner
+- Avatar and AvatarGroup
+- ProgressBar
+- Breadcrumbs
+
+6. MOCK DATA:
+- Array of sample projects
+- Array of sample tasks
+- Sample users
+- Local states that simulate CRUD
+
+7. RESPONSIVE DESIGN:
+- Mobile first
+- Breakpoints for tablet and desktop
+- Collapsible sidebar on mobile
+
+8. CONFIGURATION:
+- package.json with all dependencies
+- Configured vite.config.ts
+- tailwind.config.js
+- tsconfig.json
+- Folder structure: src/components, src/pages, src/store, src/types, src/utils
+
+REQUIRED ROUTES:
+- / (redirect to /dashboard if logged in, otherwise /login)
+- /login
+- /register
+- /dashboard
+- /projects
+- /projects/:id
+- /settings
+
+SAMPLE DATA:
+- 5 projects with different states and progress
+- 15 tasks distributed across projects
+- 3 sample users
+- Realistic dates
+
+The result should be a functional project that runs immediately with 'npm run dev' in Replit, with complete navigation, functional forms, and mock data that allows testing all features without a backend.
+
+Include attractive styling, smooth animations with Tailwind, and modern UX similar to Notion or Linear.
