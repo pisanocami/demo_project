@@ -146,7 +146,8 @@ image = "ubuntu"
 args = "npm run dev"
 
 [deployment]
-run = ["sh", "-c", "npm run dev"]
+run = ["sh", "-c", "npm start"]
+build = ["sh", "-c", "npm run build"]
 
 [[ports]]
 localPort = 5000
