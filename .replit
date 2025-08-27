@@ -53,10 +53,6 @@ version = "18.x"
 [web]
 start = "npm run dev"
 
-# Configure the build process
-[build]
-command = "bash build.sh"
-
 # Configure the test command
 [test]
 command = "npm test"
@@ -77,77 +73,9 @@ command = "npm run typecheck"
 [test.watch]
 command = "npm test -- --watch"
 
-# Configure the debugger
-[debugger]
-support = true
-
 # Configure the container
 [container]
 image = "ubuntu"
-
-# Configure the deployment
-[deployment]
-run = ["npm", "run", "dev"]
-
-# Configure the workspace
-[workspace]
-folders = [
-  { path = "." },
-  { path = "backend" }
-]
-
-# Configure the shell
-[shell]
-command = ["bash", "--login"]
-
-# Configure the Python environment
-[python]
-version = "3.10"
-
-# Configure the Node.js environment
-[nodejs]
-version = "18.x"
-
-# Configure the web server
-[web]
-start = "npm run dev"
-
-# Configure the build process
-[build]
-command = "bash build.sh"
-
-# Configure the test command
-[test]
-command = "npm test"
-
-# Configure the linter
-[lint]
-command = "npm run lint"
-
-# Configure the formatter
-[format]
-command = "npm run format"
-
-# Configure the type checker
-[typecheck]
-command = "npm run typecheck"
-
-# Configure the test watcher
-[test.watch]
-command = "npm test -- --watch"
-
-# Configure the debugger
-[debugger]
-support = true
-
-# Configure the container
-[container]
-image = "ubuntu"
-args = "npm run dev"
-
-[deployment]
-run = ["sh", "-c", "npm start"]
-build = ["sh", "-c", "npm run build"]
 
 [[ports]]
 localPort = 5000
