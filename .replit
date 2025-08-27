@@ -1,3 +1,4 @@
+
 modules = ["nodejs-20", "python-3.12"]
 
 [nix]
@@ -10,3 +11,15 @@ build = ["sh", "-c", "npm run build"]
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 41402461
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
