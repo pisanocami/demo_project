@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { X } from 'lucide-react';
-import { Project, User } from '@/types';
+import { Project } from '@/types';
 import { mockUsers } from '@/data/mockData';
 
 interface ProjectFormData {
