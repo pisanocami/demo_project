@@ -1,0 +1,12 @@
+{
+  "project_name": "Simple Project Manager",
+  "tech_stack": {
+    "frontend": "React + Vite",
+    "backend": "FastAPI",
+    "hosting": "Replit",
+    "frontend_builder": "Lovable",
+    "backend_builder": "Cursor"
+  },
+  "created_date": "2025-08-27T00:16:46.908627",
+  "version": "1.0.0"
+}
