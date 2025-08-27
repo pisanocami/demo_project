@@ -86,22 +86,25 @@ I needed to change this config in order to run it locally and on replit.
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
-const isReplit = process.env.REPLIT_DEV_DOMAIN !== undefined
+import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: isReplit ? '0.0.0.0' : 'localhost',
-    port: 5000,
-    strictPort: !isReplit,
-    hmr: isReplit ? {
-      clientPort: 443
-    } : undefined
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
-  preview: {
+  server: {
     host: '0.0.0.0',
-    port: 5000
-  }
+    port: 5000,
+    allowedHosts: [
+      '.replit.dev',
+      '.repl.co',
+      'localhost'
+    ]
+  },
 })
 
+
+4- gitignore was missing, needed to create it in order to not push node_modules
