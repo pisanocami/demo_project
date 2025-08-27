@@ -81,4 +81,27 @@
 3- Blocked request. This host ("f03c83ff-1547-400c-88d2-da60b54a1556-00-16o9691j1a419.kirk.replit.dev") is not allowed.
 To allow this host, add "f03c83ff-1547-400c-88d2-da60b54a1556-00-16o9691j1a419.kirk.replit.dev" to `server.allowedHosts` in vite.config.js.
 
+I needed to change this config in order to run it locally and on replit.
+
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+const isReplit = process.env.REPLIT_DEV_DOMAIN !== undefined
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: isReplit ? '0.0.0.0' : 'localhost',
+    port: 5000,
+    strictPort: !isReplit,
+    hmr: isReplit ? {
+      clientPort: 443
+    } : undefined
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 5000
+  }
+})
 
