@@ -1,23 +1,148 @@
-modules = ["nodejs-20", "python-3.12"]
-run = "npm run dev"
+# Configure the environment
+[env]
+PYTHONUNBUFFERED = "1"
+PORT = "5000"
 
-[nix]
-channel = "stable-25_05"
+# Enable both Node.js and Python
+[packages]
+python3 = "*"
+nodejs = "18.x"
 
-[workflows]
-runButton = "Dev Server"
+# Install dependencies and start both servers
+[run]
+language = "bash"
+start = "bash start.sh"
 
-[[workflows.workflow]]
-name = "Dev Server"
-author = 41402461
-mode = "sequential"
+# Configure the build process
+[build]
+command = "bash build.sh"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm install"
+# Enable the debugger
+[debugger]
+support = true
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
+# Configure the web preview
+[deployment]
+run = ["npm", "run", "dev"]
+
+# Enable both Python and Node.js
+[features]
+package-search = true
+package-recipe = true
+
+# Configure the workspace
+[workspace]
+folders = [
+  { path = "." },
+  { path = "backend" }
+]
+
+# Set up the shell
+[shell]
+command = ["bash", "--login"]
+
+# Configure the Python environment
+[python]
+version = "3.10"
+
+# Configure the Node.js environment
+[nodejs]
+version = "18.x"
+
+# Configure the web server
+[web]
+start = "npm run dev"
+
+# Configure the build process
+[build]
+command = "bash build.sh"
+
+# Configure the test command
+[test]
+command = "npm test"
+
+# Configure the linter
+[lint]
+command = "npm run lint"
+
+# Configure the formatter
+[format]
+command = "npm run format"
+
+# Configure the type checker
+[typecheck]
+command = "npm run typecheck"
+
+# Configure the test watcher
+[test.watch]
+command = "npm test -- --watch"
+
+# Configure the debugger
+[debugger]
+support = true
+
+# Configure the container
+[container]
+image = "ubuntu"
+
+# Configure the deployment
+[deployment]
+run = ["npm", "run", "dev"]
+
+# Configure the workspace
+[workspace]
+folders = [
+  { path = "." },
+  { path = "backend" }
+]
+
+# Configure the shell
+[shell]
+command = ["bash", "--login"]
+
+# Configure the Python environment
+[python]
+version = "3.10"
+
+# Configure the Node.js environment
+[nodejs]
+version = "18.x"
+
+# Configure the web server
+[web]
+start = "npm run dev"
+
+# Configure the build process
+[build]
+command = "bash build.sh"
+
+# Configure the test command
+[test]
+command = "npm test"
+
+# Configure the linter
+[lint]
+command = "npm run lint"
+
+# Configure the formatter
+[format]
+command = "npm run format"
+
+# Configure the type checker
+[typecheck]
+command = "npm run typecheck"
+
+# Configure the test watcher
+[test.watch]
+command = "npm test -- --watch"
+
+# Configure the debugger
+[debugger]
+support = true
+
+# Configure the container
+[container]
+image = "ubuntu"
 args = "npm run dev"
 
 [deployment]

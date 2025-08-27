@@ -103,7 +103,7 @@ alembic/versions/*
 *.sw?
 
 # Replit
-.replit
+# .replit  # Commented out to allow .replit file
 
 # Debug logs
 npm-debug.log*
